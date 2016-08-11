@@ -1,0 +1,31 @@
+TAD Fecha
+=========
+
+  - valores posibles:
+
+    Cualquier fecha válida a partir de 1/1/1
+    No se decidió: si hay límite superior.
+
+  - operaciones:
+
+    Fecha :: sumar(int dias)  // ¿modifica la fecha o devuelve una nueva?
+
+    Fecha :: diferencia(Fecha otra_fecha)
+
+      Podría devolver: `int días`, o un TAD Lapso/Intervalo/Duración.
+
+~ ~ ~ ~ ~
+
+El diseño del TAD no se preocupa por la representación.
+
+A la hora de escribir código Java, se podría usar como variables de instancia:
+
+    int día;
+    int mes;
+    int año;
+
+Pero también:
+
+    int diasAbs;  // número de días desde el 1/1/1
+
+Ambas opciones son válidas, y acarrean sus propias ventajas e inconvenientes.

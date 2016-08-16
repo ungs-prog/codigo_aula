@@ -8,13 +8,13 @@ class Nivel
 	private int lim;
 	private List<Integer> elems;
 
-	Nivel(int espacios) {
-		lim = espacios;
+	Nivel(int niv) {
+		lim = niv;
 		elems = new ArrayList<>();
 	}
 
 	boolean lleno() {
-		return elems.size() >= lim;
+		return elems.size() > lim;
 	}
 
 	boolean agregar(int x) {

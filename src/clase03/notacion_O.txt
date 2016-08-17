@@ -1,0 +1,25 @@
+
+MAX(), SUMA()   // arreglo de longitud N
+=============
+
+siempre proporcional a N
+
+  → tiempo mínimo: prop. N  (i.e. caso mejor)
+  → tiempo máximo: prop. N  (i.e. caso peor)
+
+
+ESTA()    // si está un elemento ‘x’ en un arreglo de long. N
+======
+
+  → tiempo mínimo: constante, 1  (i.e. caso mejor)
+  → tiempo máximo: prop. N       (i.e. caso peor)
+
+~~~~~~
+
+O(f)¹  => no puede > f  (no puede TARDAR más de f)
+Ω(f)²  => no puede < f  (no puede TARDAR menos de f)
+Θ(f)³  => no puede > f  Y  no puede < f
+
+(¹) O == O grande
+(²) Ω == Omega
+(³) Θ == Theta

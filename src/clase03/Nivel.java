@@ -9,7 +9,7 @@ class Nivel
 	private List<Integer> elems;
 
 	Nivel(int niv) {
-		lim = niv;
+		lim = niv + 1;
 		elems = new ArrayList<>();
 	}
 

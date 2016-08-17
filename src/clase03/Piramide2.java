@@ -5,35 +5,31 @@ import java.util.List;
 
 public class Piramide2
 {
-	private int limNiv;  // Número máximo de niveles.
 	private List<Nivel> niveles;
 
-	public Piramide2(int numNiveles) {
-		limNiv = numNiveles;
+	public Piramide3(int numNiveles) {
 		niveles = new ArrayList<>();
-		niveles.add(new Nivel(0));
-	}
 
-	public boolean agregar(int x) {
-		return ultimo().agregar(x);
+		// Inicializar todos los niveles (vacíos).
+		for (int i = 0; i < numNiveles; i++) {
+			niveles.add(new Nivel(i));
+		}
+	}
+	public boolean agregar(int elem) {
+		for (Nivel n : niveles) {
+			if (n.agregar(elem))
+				return true;
+		}
+		return false;
+
+		// for (int i=0; i < niveles.size(); i++)
+		//	if (niveles.get(i).agregar(elem))
+		//		return true;
+
 	}
 
 	public Integer obtener(int nivel, int pos) {
-		try {
-			return niveles.get(nivel).obtener(pos);
-		} catch (IndexOutOfBoundsException e) {
-			return null;
-		}
-	}
-
-	private Nivel ultimo() {
-		int cant = niveles.size();
-		Nivel ult = niveles.get(cant - 1);
-
-		if (ult.lleno() && cant < limNiv) {
-			niveles.add(ult = new Nivel(cant + 1));
-		}
-
-		return ult;
+		// Faltaría verificar errores (ver Piramide3.java).
+		return niveles.get(nivel).obtener(pos);
 	}
 }

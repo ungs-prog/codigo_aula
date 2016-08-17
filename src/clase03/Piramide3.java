@@ -3,29 +3,29 @@ package clase03;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Piramide3 {
-	private int limNiv;  // Número máximo de niveles.
+public class Piramide3
+{
 	private List<Nivel> niveles;
+	private int ultimo;  // Nos marca el Ãºltimo Nivel usado.
 
 	public Piramide3(int numNiveles) {
-		limNiv = numNiveles;
 		niveles = new ArrayList<>();
-		for (int i=0;i<limNiv;i++) {
+
+		// Inicializar todos los niveles (vacÃ­os).
+		for (int i = 0; i < numNiveles; i++) {
 			niveles.add(new Nivel(i));
 		}
 	}
 
-	public boolean agregar(int x) {
-		boolean agregado = false;
-		int i = 0;
-		while (!agregado && i<limNiv) {
-			agregado = niveles.get(i).agregar(x);
-			i=i+1;
+	public boolean agregar(int elem) {
+		if (niveles.get(ultimo).lleno()) {
+			ultimo++;
 		}
-		return agregado;
+		return niveles.get(ultimo).agregar(elem);
 	}
 
 	public Integer obtener(int nivel, int pos) {
+		// Manejo de errores con excepciones.
 		try {
 			return niveles.get(nivel).obtener(pos);
 		} catch (IndexOutOfBoundsException e) {

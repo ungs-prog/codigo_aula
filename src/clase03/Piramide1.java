@@ -19,6 +19,8 @@ public class Piramide1
 		if (elems.size() >= limElem) {
 			return false;
 		}
+		// elems.add(x);
+		// return true;
 		return elems.add(x);
 	}
 
@@ -40,5 +42,10 @@ public class Piramide1
 
 	private int gauss(int n) {
 		return n * (n + 1) / 2;
+		// Si no me acordara de la fórmula:
+		//		int s = 0;
+		//		for (int i=1; i <= n; i++)
+		//			s += i;
+		//		return s;
 	}
 }

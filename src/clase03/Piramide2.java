@@ -7,7 +7,7 @@ public class Piramide2
 {
 	private List<Nivel> niveles;
 
-	public Piramide3(int numNiveles) {
+	public Piramide2(int numNiveles) {
 		niveles = new ArrayList<>();
 
 		// Inicializar todos los niveles (vacíos).
@@ -15,6 +15,7 @@ public class Piramide2
 			niveles.add(new Nivel(i));
 		}
 	}
+
 	public boolean agregar(int elem) {
 		for (Nivel n : niveles) {
 			if (n.agregar(elem))

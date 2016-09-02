@@ -1,36 +1,19 @@
 package clase04;
 
-/**
- * Implementación de ejemplo de una pila enlazada.
- *
- */
-public class PilaInt
+public interface PilaInt
 {
-	private Nodo tope;
+	// Apila un entero.
+	public void apilar(int x);
 
-	public void apilar(int elem) {
-		tope = new Nodo(elem, tope);
-	}
+	// Devuelve true si la pila está vacía.
+	public boolean vacia();
 
-	public boolean vacia() {
-		return tope == null;
-	}
+	// Devuelve el tope de la pila, o null
+	// si la pila está vacía.
+	public Integer tope();
 
-	public Integer tope() {
-		if (tope == null)
-			return null;
-
-		return tope.val;
-	}
-
-	public Integer desapilar() {
-		Integer v = null;
-
-		if (tope != null) {
-			v = tope.val;
-			tope = tope.sig;
-		}
-
-		return v;
-	}
+	// Elimina el primer elemento de la pila, y
+	// lo devuelve. Devuelve null si la pila está
+	// vacía.
+	public Integer desapilar();
 }

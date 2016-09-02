@@ -1,11 +1,11 @@
 package clase04;
 
-class Nodo
+class NodoInt
 {
 	int val;
-	Nodo sig;
+	NodoInt sig;
 
-	Nodo(int i, Nodo n) {
+	NodoInt(int i, NodoInt n) {
 		val = i;
 		sig = n;
 	}

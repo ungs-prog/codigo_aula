@@ -6,29 +6,53 @@ package clase08;
 public class ConjuntoEnlazado implements ConjuntoInt
 {
 	private NodoInt prim;
+	private int len;
 
-	public boolean agregar(int x) {
-		// TODO Auto-generated method stub
+	public boolean pertenece(int x) {
+		NodoInt act = prim;
+
+		while (act != null) {
+			if (act.val == x)
+				return true;
+			act = act.sig;
+		}
 		return false;
 	}
 
-	public boolean pertenece(int x) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean agregar(int x) {
+		if (pertenece(x))
+			return false;
+
+		prim = new NodoInt(x, prim);
+		len++;
+		return true;
 	}
 
 	public boolean quitar(int x) {
-		// TODO Auto-generated method stub
-		return false;
+		NodoInt ant = null;
+		NodoInt act = prim;
+
+		// Encontrar el elemento.
+		while (act != null && act.val != x) {
+			ant = act;
+			act = act.sig;
+		}
+		if (act == null)
+			return false;  // No encontrado.
+		if (ant == null)
+			prim = act.sig;
+		else
+			ant.sig = act.sig;
+
+		len--;
+		return true;
 	}
 
 	public boolean vacio() {
-		// TODO Auto-generated method stub
-		return false;
+		return prim == null;
 	}
 
 	public int len() {
-		// TODO Auto-generated method stub
-		return -1;
+		return len;
 	}
 }

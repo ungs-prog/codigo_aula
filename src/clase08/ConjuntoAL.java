@@ -14,27 +14,28 @@ public class ConjuntoAL implements ConjuntoInt
 	}
 
 	public boolean agregar(int x) {
-		// TODO Auto-generated method stub
-		return false;
+		if (pertenece(x))
+			return false;
+
+		return elems.add(x);
 	}
 
 	public boolean pertenece(int x) {
-		// TODO Auto-generated method stub
-		return false;
+		return elems.contains(x);
 	}
 
 	public boolean quitar(int x) {
-		// TODO Auto-generated method stub
-		return false;
+		if (!pertenece(x))
+			return false;
+
+		return elems.remove(new Integer(x));
 	}
 
 	public boolean vacio() {
-		// TODO Auto-generated method stub
-		return false;
+		return elems.isEmpty();
 	}
 
 	public int len() {
-		// TODO Auto-generated method stub
-		return -1;
+		return elems.size();
 	}
 }

@@ -45,8 +45,8 @@ public class InvertirIterativo
 
 		while (!pila_aux.vacia()) {
 			int elem = pila_aux.desapilar();
-			pila.apilar(elem);
-			cola_nueva.encolar(elem);
+			pila.apilar(elem);  // Dejar orden original
+			cola_nueva.encolar(elem);  // Orden inverso
 		}
 
 		return cola_nueva;

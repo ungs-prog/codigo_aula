@@ -29,6 +29,6 @@ public class ArbolBinario
 		}
 
 		return (esABB(nodo.izq, limIzq, nodo.val) &&
-		        esABB(nodo.der, nodo.val, limIzq));
+		        esABB(nodo.der, nodo.val, limDer));
 	}
 }

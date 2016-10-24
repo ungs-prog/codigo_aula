@@ -1,0 +1,4 @@
+.clang-format export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+*.org export-ignore

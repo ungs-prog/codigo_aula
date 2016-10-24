@@ -75,6 +75,8 @@ public class DequeEnlazada<T> extends DequeBase<T> implements Deque<T> {
 
 	@Override
 	public boolean contains(Object o) {
+		// Ayuda: usar java.util.Objects.equals()
+		// para evitar problemas con null.
 		return false;
 	}
 

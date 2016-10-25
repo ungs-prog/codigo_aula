@@ -28,7 +28,7 @@ public class ABB
 	//     Ventaja: no hay que hacer excepciones con árbol vacío.
 
 	public void insertar(int x) {
-		insertar(raiz, x);
+		raiz = insertar(raiz, x);
 	}
 
 	private NodoInt insertar(NodoInt p, int x) {

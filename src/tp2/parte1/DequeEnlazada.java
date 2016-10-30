@@ -29,6 +29,11 @@ public class DequeEnlazada<T> extends DequeBase<T> implements Deque<T> {
 		return null;
 	}
 
+	// Sugerencia: para las cuatro primitivas de borrado, usar una misma función
+	// auxiliar:
+	//
+	//      private T borrarNodo(Nodo<T> nodo);
+
 	@Override
 	public T removeFirst() {
 		return null;

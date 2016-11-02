@@ -300,7 +300,9 @@ Las direcciones de entrega electrónica son:
   - Comisión 1: `entregas.prog2@gmail.com`
   - Comisión 2: `ungsmpprogramacion2@hotmail.com.ar`
 
-El asunto debe incluir "TP2 2016/2", la comisión (COM1 o COM2), el número de grupo (p.ej. G3 o G17) y los apellidos de sus integrantes.
+El asunto debe incluir "TP2 2016/2", la comisión (COM1 o COM2), el número de grupo (p.ej. G3 o G17) y los apellidos de sus integrantes. Por ejemplo:
+
+    Asunto: TP2 2016/2 - COM1 - Bertaccini Simó - G9
 
 Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
 

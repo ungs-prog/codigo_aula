@@ -1,0 +1,20 @@
+\urlstyle{tt}
+\usepackage[marginal,bottom,splitrule,stable]{footmisc}
+
+\usepackage[bigdelims,vvarbb]{newpxmath}
+
+% Left margin for the verbatim environment.
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=2em}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \vspace{1em}{\Large\bf Contenidos}
+  \@starttoc{toc}
+}
+\makeatother
+
+\usepackage{titletoc}
+\titlecontents{section}[0em]{\vskip 4ex\large\bf}{Ejercicio \thecontentslabel{}: }{}{\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}[2em]{\vskip 0.5ex\itshape}{}{}{\hspace{1ex}--- \contentspage}{}
+% \titlelabel{\thetitle.\hspace{1ex}}

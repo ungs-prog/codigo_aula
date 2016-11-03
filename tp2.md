@@ -290,6 +290,8 @@ Cabe notar que, por lo general, _no_ corresponde implementar un iterador propio 
         return estructura_A.iterator();
     }
 
+Para devolver el conjunto vacío, se puede crear una estructura vacía y devolver su iterador, o usar el método de Java `Collections.emptyIterator()`.
+
 
 Caso de prueba
 --------------
@@ -318,7 +320,9 @@ La entrega se realiza por correo electrónico en un mensaje que debe contener do
 
   - segundo adjunto: un archivo ZIP con los archivos fuente del proyecto.[^6] En particular, se espera:
 
-      - la solución al ejercicio 1 en un un archivo llamado _DequeEnlazada.java_.
+      - la solución al ejercicio 1 en un un archivo llamado
+        _DequeEnlazada.java_. La definición de nodo puede incluirse en este
+        archivo o, si se prefiere, en un archivo separado.
 
         Los archivos _DequeBase.java_ y _TestDeque.java_ **no** deben ser modificados y no forman parte de la entrega.
 

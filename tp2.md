@@ -136,6 +136,38 @@ De usarse esta clase base, la declaración final de _DequeEnlazada_ quedaría:
 
   - también se incluye una clase _TestDeque_ con pruebas para la implementación a entregar. El código entregado _debe_ pasar estas pruebas para ser admisible. No obstante, durante la corrección se podrá aplicar un conjunto más extenso de pruebas.
 
+
+Ejemplo de uso
+--------------
+
+Un ejemplo inicial del uso de _Deque_ sería:
+
+```c
+
+Deque<String> deque = new DequeEnlazada<>();
+
+deque.addFirst("b");
+deque.addFirst("a");
+deque.addLast("c");
+
+deque.size();        // 3
+deque.isEmpty();     // false
+
+deque.getFirst();    // "a"
+deque.removeLast();  // "c"
+deque.getLast();     // "b"
+deque.size();        //  2
+
+
+// Excepciones sobre un deque vacío:
+
+Deque<String> vacío = new DequeEnlazada<>();
+
+deque.isEmpty();    // true
+vacío.peekFirst();  // devuelve null
+vacío.getFirst();   // lanza NoSuchElementException
+```
+
 \newpage
 
 
@@ -242,20 +274,24 @@ Por esto, se aconseja el uso de iteradores de manera que se pueda escribir:
 
 donde la primitiva _relaciones()_ tendría la siguiente signatura:
 
-    Iterator<String> relaciones(String persona) { ... }
+    Iterator<String> relaciones(String persona)
+    {
+        // ...
+    }
 
 El uso de iteradores permite cumplir con los tres requisitos: complejidad espacial $\mathcal{O}(1)$, complejidad temporal $\mathcal{O}(m_a)$ y no exponer la estructura subyacente ni permitir su modificación.
 
 Cabe notar que, por lo general, _no_ corresponde implementar un iterador propio para estructuras estándar del lenguaje. En particular, todas las colecciones de Java tienen un método _iterator()_ en el que se puede delegar la primitiva:
 
-    Iterator<String> relaciones(String a) {
+    Iterator<String> relaciones(String a)
+    {
         // Obtener una referencia a la estructura de ‘a’ y devolver
         // su iterador:
         return estructura_A.iterator();
     }
 
 
-Caso de prueba {#caso-red}
+Caso de prueba
 --------------
 
 Junto con la implementación de las clases necesarias, se pide un archivo de ejemplo donde:
@@ -264,10 +300,9 @@ Junto con la implementación de las clases necesarias, se pide un archivo de eje
 
   2. se invoque a los distintos métodos de cada red, comprobando que el resultado sea correcto.
 
-Como _mínimo_, en el caso de prueba se tiene que construir la redes que se representa a continuación.
+Como _mínimo_, en el caso de prueba se tiene que construir la red que se representa en la figura \ref{filo}.
 
-![¿Quién influenció a quién? (7 nodos y 10 relaciones)](filo.pdf)
-
+![¿Quién influenció a quién? (7 nodos y 10 relaciones)](filo.pdf){#filo}
 
 \newpage
 
@@ -289,11 +324,9 @@ La entrega se realiza por correo electrónico en un mensaje que debe contener do
 
         Si, por iniciativa propia, el alumno añade sus propios casos de prueba, los puede entregar en un archivo _TestDequeAlumno.java_.
 
-      -  los archivos de código para el ejercicio 2, que serán al menos tres: las implementaciones de red simétrica y asimétrica más el caso de prueba propuesto en la sección [caso-red]. Obviamente, se permite incluir más clases y archivos de código según necesite el diseño propuesto.
+      -  los archivos de código para el ejercicio 2, que serán al menos tres: las implementaciones de red simétrica y asimétrica más sus casos de prueba. Obviamente, se permite incluir más clases y archivos de código según necesite el diseño propuesto.
 
 [^6]: Al exportar desde Eclipse se debe seleccionar solamente el directorio ‘src’. No debe incluirse ningún archivo en formato JAR y, preferentemente, tampoco archivos _.class_ (bytecode de Java).
-
-### Dirección ###
 
 Las direcciones de entrega electrónica son:
 
@@ -302,15 +335,21 @@ Las direcciones de entrega electrónica son:
 
 El asunto debe incluir "TP2 2016/2", la comisión (COM1 o COM2), el número de grupo (p.ej. G3 o G17) y los apellidos de sus integrantes. Por ejemplo:
 
-    Asunto: TP2 2016/2 - COM1 - Bertaccini Simó - G9
+```
 
-Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
+Asunto: TP2 2016/2 - COM1 - Bertaccini Simó G9
+```
 
 ### Requisitos ###
 
 Todo el código entregado debe compilar para considerarse una entrega válida.
 
 Además, la implementación de _DequeEnlazada_ debe pasar los casos de prueba que se adjuntaron a la consigna (_TestDeque.java_).
+
+### Copia en papel ###
+
+Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
+
 
 ### Consideración final ###
 

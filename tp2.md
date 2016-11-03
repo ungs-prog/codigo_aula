@@ -308,6 +308,31 @@ Como _mínimo_, en el caso de prueba se tiene que construir la red que se repres
 
 \newpage
 
+El código que se pide sería similar al siguiente:
+
+```
+// Crear la red y añadir relaciones.
+red = nueva Red;
+
+red.agregarRelacion("Spinoza", "Leibniz");
+red.agregarRelacion("Spinoza", "Nietzsche");
+red.agregarRelacion("Spinoza", "Deleuze");
+
+// Consultas a la red.
+red.totalPersonas();   -> 7
+red.totalRelaciones(); -> 10
+
+// Comprobar la red de influencia.
+red.numRelaciones("Leibniz");    ->  2
+red.numRelaciones("Heidegger");  -> -1 (no está)
+
+// Imprimir la red influencia de algún filósofo...
+```
+
+### Epígrafe ###
+
+Se dice de la Wikipedia inglesa que, al visitar reiteradamente el primer enlace de cada página, se llega siempre a Filosofía independientemente de la página de partida. (Ocurre algo similar en la figura \ref{filo} con Deleuze.)
+
 
 Instrucciones para la entrega {-}
 =============================
@@ -339,10 +364,9 @@ Las direcciones de entrega electrónica son:
 
 El asunto debe incluir "TP2 2016/2", la comisión (COM1 o COM2), el número de grupo (p.ej. G3 o G17) y los apellidos de sus integrantes. Por ejemplo:
 
-```
+    Asunto: TP2 2016/2 - COM1 - Bertaccini Simó G9
 
-Asunto: TP2 2016/2 - COM1 - Bertaccini Simó G9
-```
+De haber múltiples entregas, se considera como definitiva la _última_ enviada. Caso de no ser la correcta, se debe enviar de nuevo la versión que sí lo es.
 
 ### Requisitos ###
 
@@ -352,9 +376,5 @@ Además, la implementación de _DequeEnlazada_ debe pasar los casos de prueba qu
 
 ### Copia en papel ###
 
-Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
+Para la comisión 1, además, se debe entrear una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
 
-
-### Consideración final ###
-
-De haber múltiples entregas, se considera como definitiva la _última_ enviada. Caso de no ser la correcta, se debe enviar de nuevo la versión que sí lo es.

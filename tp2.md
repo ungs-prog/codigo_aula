@@ -236,7 +236,7 @@ Se establece que el tiempo de ejecución de las siguientes cuatro primitivas deb
   - `numRelaciones(a)`
   - `agregarRelacion(a, b)`
 
-También se establece un límite al uso de memoria: la complejidad espacial de la red, esto es, el espacio que ocupa el objeto en memoria, debe quedar en $\mathcal{O}(n \times m)$ —donde $n$ y $m$ son, respectivamente, el número de personas y el número total de relaciones en la red.
+También se establece un límite al uso de memoria: la complejidad espacial de la red, esto es, el espacio que ocupa el objeto en memoria, debe quedar en $\mathcal{O}(n + m)$ —donde $n$ y $m$ son, respectivamente, el número de personas y el número total de relaciones en la red.
 
 Finalmente, se desea que la lista de relaciones de una persona se pueda obtener con complejidad espacial $\mathcal{O}(1)$ y se pueda recorrer con complejidad temporal $\mathcal{O}(m_a)$, donde $m_a$ es el número de relaciones de esa persona.
 
@@ -312,11 +312,12 @@ El código que se pide sería similar al siguiente:
 
 ```
 // Crear la red y añadir relaciones.
-red = nueva Red;
+red = new ...;
 
 red.agregarRelacion("Spinoza", "Leibniz");
 red.agregarRelacion("Spinoza", "Nietzsche");
 red.agregarRelacion("Spinoza", "Deleuze");
+// ...
 
 // Consultas a la red.
 red.totalPersonas();   -> 7
@@ -376,5 +377,5 @@ Además, la implementación de _DequeEnlazada_ debe pasar los casos de prueba qu
 
 ### Copia en papel ###
 
-Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
+Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega (17/11) o la clase inmediatamente posterior (19/11). Ambas versiones deben ser siempre idénticas.
 

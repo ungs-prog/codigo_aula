@@ -376,5 +376,5 @@ Además, la implementación de _DequeEnlazada_ debe pasar los casos de prueba qu
 
 ### Copia en papel ###
 
-Para la comisión 1, además, se debe entrear una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
+Para la comisión 1, además, se debe entregar una copia impresa de código e informe. Se debe entregar en mano en el laboratorio el día de la entrega o, alternativamente, en el casillero de los profesores en el ICI hasta las 19h del mismo día.
 

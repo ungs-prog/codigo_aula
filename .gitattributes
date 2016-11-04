@@ -1,4 +1,7 @@
 .clang-format export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore
+*.md export-ignore
 *.org export-ignore
+*.tex export-ignore
+Makefile export-ignore

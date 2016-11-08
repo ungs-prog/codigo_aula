@@ -24,8 +24,8 @@ public class TestDeque
 		deque.addFirst("b");
 		deque.addLast("c");
 
-		deque.push("a");
-		deque.offer("d");
+		deque.addFirst("a");
+		deque.addLast("d");
 
 		assertEquals(4, deque.size());
 		assertEquals("a", deque.getFirst());
@@ -34,66 +34,74 @@ public class TestDeque
 
 	@Test
 	public void testBasicoUlt() {
-		assertNull(deque.peek());
-
-		assertTrue(deque.add("a"));
-		assertTrue(deque.add("b"));
+		deque.addLast("a");
+		deque.addLast("b");
 
 		assertFalse(deque.isEmpty());
-		assertEquals("a", deque.peekFirst());
-		assertEquals("b", deque.peekLast());
+
+		assertEquals("a", deque.getFirst());
+		assertEquals("b", deque.getLast());
 	}
 
 	@Test
 	public void testBorradoPrim() {
-		assertNull(deque.pollLast());
-		assertNull(deque.pollFirst());
-
-		assertTrue(deque.offerFirst("a"));
-		assertTrue(deque.offerLast("b"));
-		assertTrue(deque.offerLast("c"));
+		deque.addFirst("a");
+		deque.addLast("b");
+		deque.addLast("c");
 
 		assertEquals("a", deque.removeFirst());
-		assertEquals("b", deque.remove());
-		assertEquals("c", deque.pop());
+		assertEquals("b", deque.removeFirst());
+		assertEquals("c", deque.removeFirst());
 
 		assertEquals(0, deque.size());
-		assertNull(deque.poll());
 	}
 
 	@Test
 	public void testBorradoUlt() {
-		assertNull(deque.peekLast());
-
-		deque.add("a");
-		deque.add("b");
-		deque.add("c");
+		deque.addLast("a");
+		deque.addLast("b");
+		deque.addLast("c");
 
 		assertEquals("c", deque.removeLast());
-		assertEquals("a", deque.pollFirst());
+		assertEquals("a", deque.removeFirst());
 		assertEquals(1, deque.size());
 
-		assertEquals("b", deque.element());
-		assertEquals("b", deque.pollLast());
+		assertEquals("b", deque.getFirst());
+		assertEquals("b", deque.removeLast());
 		assertTrue(deque.isEmpty());
 	}
 
 	@Test
-	public void testBorrarElem() {
-		deque.add("a");
-		deque.add("b");
-		deque.add("c");
-		deque.add("d");
-		deque.add("b");
-		deque.add("e");
+	public void testBorradoDupl() {
+		deque.addLast("a");
+		deque.addLast("b");
+		deque.addLast("a");
 
-		assertFalse(deque.remove("x"));
+		assertEquals("a", deque.removeFirst());
+
+		assertEquals("b", deque.getFirst());
+		assertEquals("a", deque.getLast());
+
+		assertEquals("a", deque.removeLast());
+		assertEquals("b", deque.removeFirst());
+	}
+
+	@Test
+	public void testBorrarElem() {
+		deque.addLast("a");
+		deque.addLast("b");
+		deque.addLast("c");
+		deque.addLast("d");
+		deque.addLast("b");
+		deque.addLast("e");
+
+		assertFalse(deque.removeFirstOccurrence("x"));
 		assertFalse(deque.removeLastOccurrence("y"));
 		assertEquals(6, deque.size());
 
 		assertTrue(deque.removeLastOccurrence("b"));
 		assertTrue(deque.removeFirstOccurrence("e"));
-		assertTrue(deque.remove("a"));
+		assertTrue(deque.removeFirstOccurrence("a"));
 
 		assertEquals("b", deque.getFirst());
 		assertEquals("d", deque.getLast());
@@ -101,10 +109,10 @@ public class TestDeque
 
 	@Test
 	public void testContains() {
-		deque.add("a");
-		deque.add("b");
-		deque.add("c");
-		deque.add("d");
+		deque.addLast("a");
+		deque.addLast("b");
+		deque.addLast("c");
+		deque.addLast("d");
 
 		assertTrue(deque.contains("a"));
 		assertTrue(deque.contains("b"));
@@ -113,15 +121,20 @@ public class TestDeque
 		assertFalse(deque.contains("x"));
 
 		String elems[] = { "d", "b", "a", "c" };
+
+		// Devuelve true si el deque contiene todos los valores en "elems".
 		assertTrue(deque.containsAll(Arrays.asList(elems)));
 
-		assertEquals("a", deque.pop());
+		assertEquals("a", deque.removeFirst());
+
+		// Como se eliminó "a" del deque, ya no se cumple.
 		assertFalse(deque.containsAll(Arrays.asList(elems)));
 
 		deque.clear();
 		assertTrue(deque.isEmpty());
 		assertEquals(0, deque.size());
 
+		// Un deque siempre contiene todos los elementos de una colección vacía.
 		assertTrue(deque.containsAll(Arrays.asList(new String[0])));
 	}
 
@@ -130,7 +143,7 @@ public class TestDeque
 		String elems[] = { "x", "y", "z" };
 		assertTrue(deque.addAll(Arrays.asList(elems)));
 
-		assertEquals("x", deque.poll());
+		assertEquals("x", deque.removeFirst());
 		assertEquals(2, deque.size());
 
 		assertFalse(deque.addAll(Arrays.asList(new String[0])));

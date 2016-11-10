@@ -97,9 +97,9 @@ La clase _TreeMap_ de Java implementa un diccionario sobre ABB. Las cuatro primi
 
 La implementación de diccionario de Java sobre tabla hash se llama _HashMap_. En general, las primitivas de diccionario sobre tabla hash tienen complejidad $\mathcal{O}(1)$. Esto se consigue con el uso de una _función hash_ sobre $K$ (no hace falta función hash para $V$).
 
-Java ya proporciona una función hash para todos sus tipos primitivos, incluyendo _String_. Por tanto, en caso de tener un diccionario _Map<String, Persona>_ no sería necesario que el usuario proporcione ninguna función de hash. Lo mismo ocurriría con, por ejemplo, _Map<Integer, String>_.
+Java ya proporciona una función hash para todos sus tipos primitivos, incluyendo _String_. Por tanto, en caso de tener un diccionario _Map\<String, Persona\>_ no sería necesario que el usuario proporcione ninguna función de hash. Lo mismo ocurriría con, por ejemplo, _Map\<Integer, String\>_.
 
-Por el contrario, si $K$ es un tipo proporcionado por el usuario, por ejemplo en _Map<Persona, Integer>_ el usuario _sí_ tendría que proporcionar una función hash para el tipo _Persona_.
+Por el contrario, si $K$ es un tipo proporcionado por el usuario, por ejemplo en _Map\<Persona, Integer\>_ el usuario _sí_ tendría que proporcionar una función hash para el tipo _Persona_.
 
 
 Cola doblemente terminada
@@ -134,7 +134,7 @@ Por esta razón, las cuatro primitivas que realizan comparaciones incluyen _Obje
   - `contains(Object obj)`
   - `containsAll(Collection<?> col)`
 
-En el último de ellos, `Collection<?>` es, a efectos prácticos, equivalente a `Collection\<Object\>`. La iteración se debe realizar con una variable de tipo _Object_:
+En el último de ellos, `Collection<?>` es, a efectos prácticos, equivalente a `Collection<Object>`. La iteración se debe realizar con una variable de tipo _Object_:
 
     for (Object elem : col) {
         // ...

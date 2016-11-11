@@ -67,7 +67,7 @@ Primitivas
 
 Las primitivas más importantes del TAD diccionario son:
 
-  - `insertar(c, s)`: asociar a la clave _c_ el significado _s
+  - `insertar(c, s)`: asociar a la clave _c_ el significado _s_
 
   - `obtener(c)`: obtener el valor asociado con una clave.
 

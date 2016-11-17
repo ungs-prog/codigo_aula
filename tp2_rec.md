@@ -103,23 +103,19 @@ Lista de personas en la red
 Una funcionalidad importante que no se incluyó en la versión inicial de la red, y que se necesita para el algoritmo de inversión, es poder acceder a la lista de personas que la componen. La solución más elegante es hacer que _RedSocial_ se pueda usar en un ciclo _foreach_ directamente:
 
     for (String p : original) {
-        for (String r : original.relaciones(p))
-            inversa.agregarRelacion(r, p);
+        System.out.println("En la red está: " + p);
     }
 
 De _iterador_ a _iterable_
 --------------------------
 
-En la consigna anterior se explicó en detalle la idea de “objeto iterador” (interfaz _Iterator_ en Java). Ahora, diremos que un objeto _O_ es “iterable” cuando se cumple que:
+En la consigna anterior se explicó en detalle el concepto de “objeto iterador” (interfaz _Iterator_ de Java). Ahora definimos un objeto _O_ como “iterable” cuando implementa la interfaz _Iterable_ de Java y, por tanto:
 
-  a. implementa la interfaz _Iterable_ de Java
+  1. incluye el método `iterator()` que define la interfaz, el cual devuelve un “objeto iterador” para la estructura.
 
-  b. tiene un método `iterator()` que devuelve un objeto de tipo _Iterador_
+  2. se puede usar el objeto _O_ en un ciclo _foreach_.
 
-  c. se puede usar _O_ en un ciclo _foreach_.[^1]
-
-Por tanto, si _RedSocial_ implementa la interfaz:
-
+Así, si _RedSocial_ implementa esa interfaz:
 
 ```java
 class RedSocial implements Iterable<String>
@@ -131,8 +127,6 @@ class RedSocial implements Iterable<String>
 
 será posible usarla dentro de un ciclo _foreach_.
 
-[^1]: De hecho, las tres condiciones son sinónimas, y no puede cumplirse una sin que se cumplan las otras dos también.
-
 Relaciones de una persona
 -------------------------
 
@@ -140,27 +134,20 @@ En la consigna original la signatura del método _relaciones()_ era:
 
     public Iterator<String> relaciones(String p) { ... }
 
-Esto permitía cumplir con los requisitos de complejidad y encapsulamiento exigidos, pero la iteración era tediosa porque debía usarse los métodos de iterador de manera explícita:
+Esto permitía cumplir con los requisitos de complejidad y encapsulamiento exigidos, pero la iteración era tediosa porque se debía invocar de manera explícita los métodos de _Iterator_:
 
-    void imprimirRelaciones(RedSocial red, String persona)
-    {
-        Iterator<String> it = red.relaciones(persona);
+    Iterator<String> it = red.relaciones("Spinoza");
+    while (it.hasNext())
+        System.out.println("Spinoza influenció a: " + it.next());
 
-        while (it.hasNext())
-            System.out.println(it.next());
-    }
-
-Si cambiamos la signatura del método a:
+Si, en cambio, modificamos la signatura para que devuelva un _iterable_:
 
     public Iterable<String> relaciones(String p) { ... }
 
 sería posible escribir directamente:
 
-    void imprimirRelaciones(RedSocial red, String persona)
-    {
-        for (String r : red.relaciones(persona))
-            System.out.println(r);
-    }
+    for (String f : red.relaciones("Spinoza"))
+        System.out.println("Spinoza influenció a: " + f);
 
 **Fe de erratas:** La versión inicial de la consigna mezclaba, inicialmente, el concepto de _iterador_ e _iterable_ en los ejemplos de código.
 

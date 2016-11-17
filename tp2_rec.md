@@ -88,11 +88,11 @@ A menudo en algoritmos de redes sociales (y grafos en general) se necesita obten
 
     public RedSocialAsim inversa() { ... }
 
-El algoritmo es muy sencillo:
+El algoritmo para calcular la red inversa es muy sencillo:
 
     procedimiento "calcular red inversa":
         1. crear nueva red asimétrica
-        2. para cada persona P en la red original:
+        2. para cada persona P de la red original:
            a. obtener la lista de relaciones de P
            b. para cada persona R de esa lista:
               => agregar a la nueva red la relación inversa R -> P
@@ -149,21 +149,26 @@ sería posible escribir directamente:
     for (String f : red.relaciones("Spinoza"))
         System.out.println("Spinoza influenció a: " + f);
 
-**Fe de erratas:** La versión inicial de la consigna mezclaba, inicialmente, el concepto de _iterador_ e _iterable_ en los ejemplos de código.
+**Fe de erratas:** La versión inicial de la consigna mezclaba, inicialmente, el concepto de _iterador_ e _iterable_ en los ejemplos de código. Se corrigió y se aclara aquí..
 
 Entrega
 -------
 
-Para el recuperatorio de la parte 2 se pide, por tanto:
+En definitiva, para el recuperatorio de la parte 2 se pide:
 
-1.  implementar la interfaz `Iterable<String>` en el TAD red social.
+1.  Implementar la interfaz `Iterable<String>` en el TAD red social.
 
-2.  cambiar la firma del método _relaciones()_ a:
+2.  Cambiar la firma del método _relaciones()_ a:
 
         public Iterable<String> relaciones(String persona) { ... }
 
-3.  incluir una implementación de _toString()_ común para todas las redes sociales, y una primitiva `inversa()` para las redes asimétricas. Se exige, además:
+3.  Incluir una implementación de _toString()_ común para todas las redes sociales, y una primitiva `inversa()` para las redes asimétricas. Además:
 
     - al igual que en _DequeEnlazada_, `toString()` debe usar _StringBuilder_ para no realizar construcciones de cadenas innecesarias
 
-    - tanto `inversa()` como `toString()` solamente pueden usar métodos públicos de la red.
+    - tanto en `inversa()` como en `toString()` solamente se permite usar métodos públicos de la red.
+
+Instrucciones para la entrega {-}
+=============================
+
+Las instrucciones de entrega son las mismas que en la consigna original. La copia en papel para la comisión 1 se debe dejar en el casillero de los profesores Simó o Bertaccini antes de las 20h del día de la entrega.

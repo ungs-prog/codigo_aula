@@ -135,7 +135,7 @@ public class DequeEnlazada<T> extends DequeBase<T> implements Deque<T> {
 	@Override
 	public boolean addAll(Collection<? extends T> coleccion) {
 		// ...
-		return !c.isEmpty();
+		return !coleccion.isEmpty();
 	}
 
 	/**

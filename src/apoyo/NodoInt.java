@@ -1,3 +1,5 @@
+package apoyo;
+
 class NodoInt
 {
 	int val;

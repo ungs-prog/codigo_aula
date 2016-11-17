@@ -268,8 +268,10 @@ Por esto, se aconseja el uso de iteradores de manera que se pueda escribir:
 
     static void imprimirRelaciones(RedSocial red, String persona)
     {
-        for (String r : red.relaciones(persona))
-            System.out.println(r);
+        Iterator<String> it = red.relaciones(persona);
+
+        while (it.hasNext())
+            System.out.println(it.next());
     }
 
 donde la primitiva _relaciones()_ tendría la siguiente signatura:

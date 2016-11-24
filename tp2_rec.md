@@ -149,7 +149,7 @@ sería posible escribir directamente:
     for (String f : red.relaciones("Spinoza"))
         System.out.println("Spinoza influenció a: " + f);
 
-**Fe de erratas:** La versión inicial de la consigna mezclaba, inicialmente, el concepto de _iterador_ e _iterable_ en los ejemplos de código. Se corrigió y se aclara aquí..
+**Fe de erratas:** La versión inicial de la consigna mezclaba, inicialmente, el concepto de _iterador_ e _iterable_ en los ejemplos de código. Se corrigió y se aclara aquí.
 
 Entrega
 -------

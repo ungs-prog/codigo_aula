@@ -10,8 +10,8 @@ public class Main
 		// y la dimensión de tablero deseada.
 		//
 		MotorSyE sye = new MotorSyE(3, 7);  // 3 jug., dim 7 × 7 = 49 celdas.
-		
-		while (sye.seguir()) {
+
+		do {
 			Turno t = sye.siguienteTurno();
 
 			System.out.println("Juega el jugador " + t.numJugador());
@@ -41,6 +41,6 @@ public class Main
 				break;
 				
 			}
-		}
+		} while (sye.seguir());
 	}
 }
